@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuition Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tuition Simulator</h2>
+
+    <label for="totalAmount">Enter Total Amount:</label>
+    <input type="number" id="totalAmount" placeholder="Enter total amount">
+
+    <button onclick="calculateTuition()">Calculate Tuition</button>
+
+    <p id="tuitionResult"></p>
+
+    <script>
+        function calculateTuition() {
+            // Get the total amount from the input field
+            var totalAmountInput = document.getElementById("totalAmount");
+            var totalAmount = parseFloat(totalAmountInput.value);
+
+            // Check if the input is a valid number
+            if (!isNaN(totalAmount)) {
+                // Calculate the tuition by dividing the total amount by 10
+                var tuition = totalAmount / 10;
+
+                // Display the result to the user
+                var tuitionResultElement = document.getElementById("tuitionResult");
+                tuitionResultElement.textContent = "Your tuition is: $" + tuition.toFixed(2);
+            } else {
+                alert("Please enter a valid number for the total amount.");
+            }
+        }
+    </script>
+
+</body>
+</html>
